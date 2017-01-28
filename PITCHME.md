@@ -25,12 +25,12 @@
 
 ## Kinds of version control
 
-- local version control
-- centralised version control
+- local version control  <!-- .element: class="fragment" -->
+- centralised version control  <!-- .element: class="fragment" -->
   - perforce
   - CVS
   - Subversion
-- distributed version control
+- distributed version control  <!-- .element: class="fragment" -->
   - Git
   - Mercurial
   - DARCS
@@ -38,12 +38,13 @@
 #VSLIDE
 
 ## CENTRALISED
-[https://git-scm.com/book/en/v2/images/centralized.png]
+![Image-Absolute](https://git-scm.com/book/en/v2/images/centralized.png)
 
 #VSLIDE
 
 ## DISTRIBUTED
-[https://git-scm.com/book/en/v2/images/distributed.png]
+![Image-Absolute](https://git-scm.com/book/en/v2/images/distributed.png)
+
 
 
 
