@@ -21,6 +21,36 @@
 
 ## About git
 
+#VSLIDE
+
+## Kinds of version control
+
+- local version control
+- centralised version control
+  - perforce
+  - CVS
+  - Subversion
+- distributed version control
+  - Git
+  - Mercurial
+  - DARCS
+
+#VSLIDE
+
+## CENTRALISED
+[https://git-scm.com/book/en/v2/images/centralized.png]
+
+#VSLIDE
+
+## DISTRIBUTED
+[https://git-scm.com/book/en/v2/images/distributed.png]
+
+
+
+
+
+
+
 #HSLIDE
 
 ## Different stages
@@ -56,3 +86,7 @@
 #HSLIDE
 
 ## Git workflows
+
+#HSLIDE
+
+## Documentation
