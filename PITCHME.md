@@ -38,12 +38,12 @@
 #VSLIDE
 
 ## CENTRALISED
-![Image-Absolute](https://git-scm.com/book/en/v2/images/centralized.png=200)
+![Image-Absolute](https://git-scm.com/book/en/v2/images/centralized.png =200)
 
 #VSLIDE
 
 ## DISTRIBUTED
-![Image-Relative](https://git-scm.com/book/en/v2/images/distributed.png=200)
+![Image-Relative](https://git-scm.com/book/en/v2/images/distributed.png =200)
 
 #VSLIDE
 
