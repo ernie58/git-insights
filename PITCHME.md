@@ -38,12 +38,12 @@
 #VSLIDE
 
 ## CENTRALISED
-![Image-Absolute](https://git-scm.com/book/en/v2/images/centralized.png)
+![Image-Absolute](https://git-scm.com/book/en/v2/images/centralized.png=200)
 
 #VSLIDE
 
 ## DISTRIBUTED
-![Image-Relative](https://git-scm.com/book/en/v2/images/distributed.png)
+![Image-Relative](https://git-scm.com/book/en/v2/images/distributed.png=200)
 
 #VSLIDE
 
@@ -60,6 +60,8 @@
 ## Traditional VCSses store diferences
 CVS, Subversion, Perforce, Bazaar, and so on
 ![Image-Relative](https://git-scm.com/book/en/v2/images/deltas.png)
+
+#VSLIDE
 
 ## Git stores snapshots
 Huge benefits when you start to branch
