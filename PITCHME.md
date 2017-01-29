@@ -105,8 +105,10 @@ Huge benefits when you start to branch
 ## Git config
 Tool for setting config variables
   - /etc/gitconfig file: Contains values for every user on the system and all their repositories. If you pass the option --system to git config, it reads and writes from this file specifically.
-  - ~/.gitconfig or ~/.config/git/config file: Specific to your user. You can make Git read and write to this file specifically by passing the --global option.
-  - config file in the Git directory (that is, .git/config) of whatever repository you’re currently using: Specific to that single repository.
+  - ~/.gitconfig or ~/.config/git/config file: Specific to your user. Pass the --global option.
+  - config file in the Git directory (that is, .git/config)
+  
+#VSLIDE
 
 ## Git config --list
 ```
