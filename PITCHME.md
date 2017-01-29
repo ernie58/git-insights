@@ -147,7 +147,9 @@ Initializing a Repository in an Existing Directory
 Cloning an Existing Repository
 (copies the _complete_ repository to your computer)
 
-`$ git clone https://github.com/libgit2/libgit2 mylibgit`
+```
+$ git clone https://github.com/libgit2/libgit2 mylibgit`
+```
 
 #VSLIDE
 
