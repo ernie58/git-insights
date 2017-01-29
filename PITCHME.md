@@ -38,12 +38,12 @@
 #VSLIDE
 
 ## CENTRALISED
-![Image-Absolute](https://git-scm.com/book/en/v2/images/centralized.png =200)
+<img src="https://git-scm.com/book/en/v2/images/centralized.png" width=200 />
 
 #VSLIDE
 
 ## DISTRIBUTED
-![Image-Relative](https://git-scm.com/book/en/v2/images/distributed.png =200)
+<img src="https://git-scm.com/book/en/v2/images/distributed.png" width=200 />
 
 #VSLIDE
 
@@ -66,6 +66,8 @@ CVS, Subversion, Perforce, Bazaar, and so on
 ## Git stores snapshots
 Huge benefits when you start to branch
 ![Image-Relative](https://git-scm.com/book/en/v2/images/snapshots.png)
+
+#VSLIDE
 
 ## Other advantages of git
 - Nearly everything is local <!-- .element: class="fragment" -->
