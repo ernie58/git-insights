@@ -57,7 +57,7 @@
 
 #VSLIDE
 
-## Traditional VCSses store diferences
+## Traditional VCSses store differences
 CVS, Subversion, Perforce, Bazaar, and so on
 ![Image-Relative](https://git-scm.com/book/en/v2/images/deltas.png)
 
