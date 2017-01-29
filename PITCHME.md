@@ -85,6 +85,7 @@ Huge benefits when you start to branch
 - staged  <!-- .element: class="fragment" -->
 - committed  <!-- .element: class="fragment" -->
 
+#VSLIDE
 ## main sections of a git project
 - working tree  <!-- .element: class="fragment" -->
 - staging area  <!-- .element: class="fragment" -->
