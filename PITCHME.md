@@ -160,7 +160,7 @@ $ git clone https://github.com/libgit2/libgit2 mylibgit`
     - unmodified
     - modified
     - staged
-![Image-Relative](https://git-scm.com/book/en/v2/images/lifecycle.png)
+<img src="https://git-scm.com/book/en/v2/images/lifecycle.png" width='500' />
 
 #VSLIDE
 
