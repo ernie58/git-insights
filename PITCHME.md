@@ -38,12 +38,12 @@
 #VSLIDE
 
 ## CENTRALISED
-<img src="https://git-scm.com/book/en/v2/images/centralized.png" width=200 />
+<img src="https://git-scm.com/book/en/v2/images/centralized.png" width=400 />
 
 #VSLIDE
 
 ## DISTRIBUTED
-<img src="https://git-scm.com/book/en/v2/images/distributed.png" width=200 />
+<img src="https://git-scm.com/book/en/v2/images/distributed.png" width=400 />
 
 #VSLIDE
 
