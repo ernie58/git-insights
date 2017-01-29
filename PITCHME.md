@@ -184,6 +184,7 @@ Changes not staged for commit:
 
     modified:   CONTRIBUTING.md
 ```
+#VSLIDE
 
 ## Git diff
 Shows lines changed in modified files only
@@ -211,12 +212,12 @@ index 8ebb991..643e24f 100644
  that highlights your work in progress (and note in the PR title that it's
 ```
 
-#HSLIDE
+#VSLIDE
 
 ## Git add
 Add a file or a chunck to the staging area
 
-#HSLIDE
+#VSLIDE
 
 ## Git commit
 
