@@ -128,7 +128,7 @@ $ man git-<verb>
 For example
 ```
 git help config
-``
+```
 
 #VSLIDE
 
