@@ -412,13 +412,382 @@ Date:   Tue Aug 26 19:48:51 2008 +0800
 
 ## Branches
 
+- killer feature van Git
+- instantaneous
+- non-expensive operations
+- multiple branch & merge activities a day
+
+#VSLIDE
+
+## What is a commit made of
+
+- metadata
+- working tree
+- blobs with snapshots of files
+
+<img src="https://git-scm.com/book/en/v2/images/commit-and-tree.png" />
+
+#VSLIDE
+
+## Commits and their parents
+
+<img src="https://git-scm.com/book/en/v2/images/commits-and-parents.png">
+
+#VSLIDE
+
+## What's a branch
+
+- lightweight pointer to a commit
+- default when creating repo: master (nothing special about it)
+- common misconception: a branch is a copy from my entire repository. (Like SVN, perforce)
+
+#VSLIDE
+
+<img src="https://git-scm.com/book/en/v2/images/branch-and-history.png">
+
+#VSLIDE
+
+## $ git branch testing
+
+<img src="https://git-scm.com/book/en/v2/images/two-branches.png">
+
+#VSLIDE
+
+## HEAD: local current branch you're on
+
+<img src="https://git-scm.com/book/en/v2/images/head-to-master.png">
+
+#VSLIDE
+
+## $ git checkout testing
+
+<img src="https://git-scm.com/book/en/v2/images/head-to-testing.png">
+
+#VSLIDE
+
+## The HEAD branch moves forward when a commit is made
+
+<img src="https://git-scm.com/book/en/v2/images/advance-testing.png">
+
+#VSLIDE
+
+## $ git checkout master
+
+<img src="https://git-scm.com/book/en/v2/images/checkout-master.png">
+
+#VSLIDE
+```
+$ vim test.rb
+$ git commit -a -m 'made other changes'
+```
+
+<img src="https://git-scm.com/book/en/v2/images/advance-master.png">
+
+#VSLIDE
+
+```
+$ git log --oneline --decorate --graph --all
+* c2b9e (HEAD, master) made other changes
+| * 87ab2 (testing) made a change
+|/
+* f30ab add feature #32 - ability to add new formats to the
+* 34ac2 fixed bug #1328 - stack overflow under certain conditions
+* 98ca9 initial commit of my project
+```
+
+#VSLIDE
+
+Because a branch in Git is actually a simple file that contains the 40 character SHA-1 checksum of the commit it points to, branches are cheap to create and destroy. Creating a new branch is as quick and simple as writing 41 bytes to a file (40 characters and a newline).
+
 #HSLIDE
 
 ## Merging algoritms
 
+#VSLIDE
+
+## Basic branching
+
+<img src="https://git-scm.com/book/en/v2/images/basic-branching-1.png">
+
+#VSLIDE
+
+## $ git checkout -b iss53
+
+<img src="https://git-scm.com/book/en/v2/images/basic-branching-2.png">
+
+#VSLIDE
+
+## $ git commit -a -m 'added a new footer [issue 53]'
+
+<img src="https://git-scm.com/book/en/v2/images/basic-branching-3.png">
+
+#VSLIDE
+
+## Sudden bug comes up on production site
+
+```
+$ git checkout master
+Switched to branch 'master'
+```
+
+```
+$ git checkout -b hotfix
+Switched to a new branch 'hotfix'
+$ vim index.html
+$ git commit -a -m 'fixed the broken email address'
+[hotfix 1fb7853] fixed the broken email address
+ 1 file changed, 2 insertions(+)
+```
+
+#VSLIDE
+
+## NEW GRAPH
+
+<img src="https://git-scm.com/book/en/v2/images/basic-branching-4.png">
+
+#VSLIDE
+
+## Fast-forward merge
+
+```
+$ git checkout master
+$ git merge hotfix
+Updating f42c576..3a0874c
+Fast-forward
+ index.html | 2 ++
+ 1 file changed, 2 insertions(+)
+```
+
+#VSLIDE
+
+## FAST FORWARD ?
+
+When you try to merge one commit with a commit that can be reached by following the first commit’s history, 
+Git simplifies things by moving the pointer forward because there is no divergent work to merge together – this is called a “fast-forward.”
+
+#VSLIDE
+
+<img src="https://git-scm.com/book/en/v2/images/basic-branching-5.png">
+
+#VSLIDE
+
+## let's go back to our issue
+
+```
+$ git branch -d hotfix
+Deleted branch hotfix (3a0874c).
+```
+
+```
+$ git checkout iss53
+Switched to branch "iss53"
+$ vim index.html
+$ git commit -a -m 'finished the new footer [issue 53]'
+[iss53 ad82d7a] finished the new footer [issue 53]
+1 file changed, 1 insertion(+)
+```
+
+#VSLIDE
+
+## NEW GRAPH
+
+<img src="https://git-scm.com/book/en/v2/images/basic-branching-6.png">
+
+#VSLIDE
+
+## Recursive strategy
+
+```
+$ git checkout master
+Switched to branch 'master'
+$ git merge iss53
+Merge made by the 'recursive' strategy.
+index.html |    1 +
+1 file changed, 1 insertion(+)
+```
+
+#VSLIDE
+
+## Treeway merge
+
+In this case, your development history has diverged from some older point. Because the commit on the branch you’re on isn’t a direct ancestor of the branch you’re merging in, Git has to do some work. In this case, Git does a simple three-way merge, using the two snapshots pointed to by the branch tips and the common ancestor of the two.
+
+#VSLIDE
+
+## Common anchestors + branch tips
+
+<img src="https://git-scm.com/book/en/v2/images/basic-merging-1.png">
+
+#VSLIDE
+
+## Tadaaa! A merge commit
+
+<img src="https://git-scm.com/book/en/v2/images/basic-merging-2.png">
+
+#VSLIDE
+
+## $git branch
+
+```
+$git branch
+$git branch -v  // last commits on each branch
+$git branch --merged // branches allreadfy merged in current
+$git branch --no-merged // branches not yet merged
+$git branch -d brach-you-want-to-delete
+
+```
+
+
 #HSLIDE
 
 ## Conflicts
+
+- Can occur when you merge 2 branches which have changes in the same parts of same files.
+- Git doesn't do the merging, but pauses the merging process
+
+```
+$ git merge iss53
+Auto-merging index.html
+CONFLICT (content): Merge conflict in index.html
+Automatic merge failed; fix conflicts and then commit the result.
+```
+
+#VSLIDE
+
+## What's our status
+
+```
+$ git status
+On branch master
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+
+    both modified:      index.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+```
+
+#VSLIDE
+
+## open the file, current branch at the top
+
+```
+<<<<<<< HEAD:index.html
+<div id="footer">contact : email.support@github.com</div>
+=======
+<div id="footer">
+ please contact us at support@github.com
+</div>
+>>>>>>> iss53:index.html
+```
+
+#VSLIDE
+
+## Resolve, then add, then commit
+
+Clean up the file, then add it to the stage.
+Staging a file marks it as resolved
+When all files are resolved, run git commit to finalize the merge commit
+
+#VSLIDE
+
+## Mergetools
+
+```
+$ git mergetool
+
+This message is displayed because 'merge.tool' is not configured.
+See 'git mergetool --tool-help' or 'git help config' for more details.
+'git mergetool' will now attempt to use one of the following tools:
+opendiff kdiff3 tkdiff xxdiff meld tortoisemerge gvimdiff diffuse diffmerge ecmerge p4merge araxis bc3 codecompare vimdiff emerge
+Merging:
+index.html
+
+Normal merge conflict for 'index.html':
+  {local}: modified file
+  {remote}: modified file
+Hit return to start merge resolution tool (opendiff):
+```
+
+#HSLIDE
+
+## Remote branches
+
+Remote references are references (pointers) in your remote repositories, including branches, tags, and so on.
+Show them with:
+```
+ $ git ls-remote //list
+ $ git remote show SOMEBRANCH //some info
+```
+
+#VSLIDE
+<img src="https://git-scm.com/book/en/v2/images/remote-branches-1.png">
+
+#VSLIDE
+<img src="https://git-scm.com/book/en/v2/images/remote-branches-2.png">
+
+#VSLIDE
+
+## Git fetch
+
+<img src="https://git-scm.com/book/en/v2/images/remote-branches-3.png">
+
+Git pull = git fetch + git merge
+
+# VSLIDE
+
+## Adding another server as a remote
+
+<img src="https://git-scm.com/book/en/v2/images/remote-branches-4.png">
+
+Think Github forks
+
+## Push
+
+```
+$ git push origin serverfix
+Counting objects: 24, done.
+Delta compression using up to 8 threads.
+Compressing objects: 100% (15/15), done.
+Writing objects: 100% (24/24), 1.91 KiB | 0 bytes/s, done.
+Total 24 (delta 2), reused 0 (delta 0)
+To https://github.com/schacon/simplegit
+ * [new branch]      serverfix -> serverfix
+```
+
+#VSLIDE
+
+It’s important to note that when you do a fetch that brings down new remote-tracking branches, you don’t automatically have local, editable copies of them. In other words, in this case, you don’t have a new serverfix branch – you only have an origin/serverfix pointer that you can’t modify.
+
+To merge this work into your current working branch, you can run git merge origin/serverfix. If you want your own serverfix branch that you can work on, you can base it off your remote-tracking branch:
+
+```
+$ git checkout -b serverfix origin/serverfix
+Branch serverfix set up to track remote branch serverfix from origin.
+Switched to a new branch 'serverfix'
+```
+
+#VSLIDE
+
+## Tracking branches
+
+Checking out a local branch from a remote-tracking branch automatically creates what is called a “tracking branch” (and the branch it tracks is called an “upstream branch”). Tracking branches are local branches that have a direct relationship to a remote branch. If you’re on a tracking branch and type git pull, Git automatically knows which server to fetch from and branch to merge into.
+
+#VSLIDE
+
+## Tracking branches: own combinations
+```
+$ git checkout -b sf origin/serverfix
+Branch sf set up to track remote branch serverfix from origin.
+Switched to a new branch 'sf'
+```
+
+#HSLIDE
+
+## Rebasing
 
 #HSLIDE
 
