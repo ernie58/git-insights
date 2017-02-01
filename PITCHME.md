@@ -5,20 +5,6 @@
 
 #HSLIDE
 
-## TOC
-- About git
-- Different areas files are in
-- Basic CLI commands
-- What are commits
-- Branches
-- Merging algoritms
-- Conflicts
-- Git log
-- Git bisect
-- Git workflows
-
-#HSLIDE
-
 ## About git
 
 #VSLIDE
@@ -789,18 +775,200 @@ Switched to a new branch 'sf'
 
 ## Rebasing
 
+Alternative for merging.
+Use with care :-)
+
+#VSLIDE
+
+## a common merge scenario
+
+<img src="https://git-scm.com/book/en/v2/images/basic-rebase-2.png">
+
+#VSLIDE
+
+## let's use rebase instead
+
+```
+$ git checkout experiment
+$ git rebase master
+First, rewinding head to replay your work on top of it...
+Applying: added staged command
+```
+
+#VSLIDE
+
+Replay the changes sinces the common anchestor from the current branch on the target branch 
+
+<img src="https://git-scm.com/book/en/v2/images/basic-rebase-3.png">
+
+#VSLIDE
+
+## Now clean up
+
+```
+$ git checkout master
+$ git merge experiment
+```
+
+#VSLIDE
+
+## A nice linear history
+
+<img src="https://git-scm.com/book/en/v2/images/basic-rebase-4.png">
+
+#VSLIDE
+
+## Awesome tool!
+- end result is the same, but history is different, more linear
+- makes fast-forward merging possible
+- often used to integrate changes on remote branches cleanly
+- often used with pull request on github
+
+#VSLIDE
+
+## Advanced rebase
+
+Topic branch branched from topic branc
+
+<img src="https://git-scm.com/book/en/v2/images/interesting-rebase-1.png">
+
+#VSLIDE
+
+## $ git rebase --onto master server client
+
+<img src="https://git-scm.com/book/en/v2/images/interesting-rebase-2.png">
+
+#VSLIDE
+
+## Do a fast forward
+
+```
+$ git checkout master
+$ git merge client
+```
+
+<img src="https://git-scm.com/book/en/v2/images/interesting-rebase-3.png">
+
+#VSLIDE
+
+## $ git rebase master server
+
+checks out server and replays on master
+
+<img src="https://git-scm.com/book/en/v2/images/interesting-rebase-4.png">
+
+#VSLIDE
+
+fast-forward merge and clean up
+
+```
+$ git checkout master
+$ git merge server
+
+$ git branch -d client
+$ git branch -d server
+```
+
+#VSLIDE
+
+## Result: perfect linear history
+
+<img src="https://git-scm.com/book/en/v2/images/interesting-rebase-5.png">
+
+#VSLIDE
+
+## The Perils of Rebasing
+
+Do not rebase commits that exist outside your repository.
+
+#VSLIDE
+
+## Clone a repository, and base some work on it
+
+<img src="https://git-scm.com/book/en/v2/images/perils-of-rebasing-1.png">
+
+#VSLIDE
+
+## Fetch more commits, and merge them into your work
+
+<img src="https://git-scm.com/book/en/v2/images/perils-of-rebasing-2.png">
+
+#VSLIDE
+
+## Someone pushes rebased commits, abandoning commits you’ve based your work on
+
+<img src="https://git-scm.com/book/en/v2/images/perils-of-rebasing-3.png">
+
+#VSLIDE
+
+## You merge in the same work again into a new merge commit
+
+<img src="https://git-scm.com/book/en/v2/images/perils-of-rebasing-4.png">
+
+#VSLIDE
+
+## don't do this
+
+- when you push, you reintoduce the removed commits
+- you have loads of conflicts
+- you want to kill the guy who rebased
+
+#VSLIDE
+
+## Rebase when you rebase
+
+If you do find yourself in a situation like this, Git has some further magic that might help you out. 
+If someone on your team force pushes changes that overwrite work that you’ve based work on, your challenge is to figure out what is yours and what they’ve rewritten.
+
+If you pull down work that was rewritten and rebase it on top of the new commits from your partner, Git can often successfully figure out what is uniquely yours and apply them back on top of the new branch.
+
+#VSLIDE
+
+For instance, in the previous scenario, if instead of doing a merge when we’re at Someone pushes rebased commits, abandoning commits you’ve based your work on we run `git rebase teamone/master`, Git will
+
+- Determine what work is unique to our branch (C2, C3, C4, C6, C7)
+- Determine which are not merge commits (C2, C3, C4)
+- Determine which have not been rewritten into the target branch (just C2 and C3, since C4 is the same patch as C4')
+- Apply those commits to the top of teamone/master
+
+#VSLIDE
+
+rebase on top of force pushed work:
+
+<img src="https://git-scm.com/book/en/v2/images/perils-of-rebasing-5.png">
+
+#VSLIDE
+
+```
+git rebase teamone/master
+
+or shorter
+
+git pull --rebase
+```
+
+#VSLIDE
+
+## summary rebase options
+
+- don't
+- only commits not pushed remotely
+- in commits pushed -> be scorned by colleagues
+- in commits pushed -> let people know to pull --rebase
+
+#VSLIDE 
+
+<img src="https://answers.atlassian.com/download/attachments/11976506/Capture%20d%E2%80%99e%CC%81cran%202015-01-09%20a%CC%80%2016.32.38.png?version=1&modificationDate=1420819281924&api=v2">
+
+
 #HSLIDE
 
-## Git log
+## Much more to learn...
 
-#HSLIDE
-
-## Git bisect
-
-#HSLIDE
-
-## Git workflows
-
-#HSLIDE
-
-## Documentation
+- Git bisect
+- Git hooks
+- Rewriting History
+- Stashing
+- Git references
+- Git tagging
+- ...
