@@ -725,13 +725,15 @@ Show them with:
 
 Git pull = git fetch + git merge
 
-# VSLIDE
+#VSLIDE
 
 ## Adding another server as a remote
 
 <img src="https://git-scm.com/book/en/v2/images/remote-branches-4.png">
 
 Think Github forks
+
+#VSLIDE
 
 ## Push
 
