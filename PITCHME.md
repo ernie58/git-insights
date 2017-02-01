@@ -232,7 +232,7 @@ To only remove from staging area, when you accidentally staged something
 git rm --cached <filename>
 ```
 
-# VSLIDE
+#VSLIDE
 
 ## Git log
 ```
