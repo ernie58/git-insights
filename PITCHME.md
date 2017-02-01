@@ -1001,4 +1001,4 @@ also check interactive rebase with squash and cherrypick => nice !
 
 #HSLIDE
 
-<img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQdjAnom93_t4oFG6jUspdD5AVBom1hyCBk_l3ILur81n83NWuT">
+<img src="https://memecrunch.com/meme/BC7LP/git-stash/image.gif?w=500&c=1">
