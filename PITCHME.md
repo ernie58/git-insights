@@ -423,22 +423,6 @@ A commit has
 
 #VSLIDE
 
-## What is a commit made of
-
-- metadata
-- working tree
-- blobs with snapshots of files
-
-<img src="https://git-scm.com/book/en/v2/images/commit-and-tree.png" />
-
-#VSLIDE
-
-## Commits and their parents
-
-<img src="https://git-scm.com/book/en/v2/images/commits-and-parents.png">
-
-#VSLIDE
-
 ## What's a branch
 
 - lightweight pointer to a commit
