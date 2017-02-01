@@ -391,8 +391,26 @@ Date:   Tue Aug 26 19:48:51 2008 +0800
     Signed-off-by: Scott Chacon <schacon@example.com>
 ```
 
+#HSLIDE
 
 ## Commits
+
+A commit is a snapshot in the repository.
+It consists of:
+- a working tree
+- metadata (author, date, message)
+- blobs from files staged
+
+#VSLIDE
+
+<img src="https://git-scm.com/book/en/v2/images/commit-and-tree.png">
+
+#VSLIDE
+
+A commit has
+- zero parents: initial commit
+- one parent: based on one previous commit
+- multiple parents: based on multiple commits
 
 #HSLIDE
 
