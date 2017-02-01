@@ -928,7 +928,7 @@ If you pull down work that was rewritten and rebase it on top of the new commits
 
 #VSLIDE
 
-For instance, in the previous scenario, if instead of doing a merge when we’re at Someone pushes rebased commits, abandoning commits you’ve based your work on we run `git rebase teamone/master`, Git will
+For instance, in the previous scenario, if instead of doing a merge, we run `git rebase teamone/master`, Git will
 
 - Determine what work is unique to our branch (C2, C3, C4, C6, C7)
 - Determine which are not merge commits (C2, C3, C4)
@@ -953,12 +953,30 @@ git pull --rebase
 
 #VSLIDE
 
+You can turn this pull behavior on by default with a config flag:
+```
+git config --global pull.rebase true
+```
+
+#VSLIDE
+
 ## summary rebase options
 
 - don't
 - only commits not pushed remotely
 - in commits pushed -> be scorned by colleagues
 - in commits pushed -> let people know to pull --rebase
+
+#VSLIDE
+
+## Should I use it
+
+Lot's of discussions online, but it's up to your personal situation
+
+note:
+also check interactive rebase with squash and cherrypick => nice !
+
+
 
 #VSLIDE 
 
