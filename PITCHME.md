@@ -899,7 +899,7 @@ Do not rebase commits that exist outside your repository.
 
 #VSLIDE
 
-## Someone pushes rebased commits, abandoning commits you’ve based your work on
+Someone pushes rebased commits, abandoning commits you’ve based your work on
 
 <img src="https://git-scm.com/book/en/v2/images/perils-of-rebasing-3.png">
 
