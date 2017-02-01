@@ -994,3 +994,11 @@ also check interactive rebase with squash and cherrypick => nice !
 - Git references
 - Git tagging
 - ...
+
+#HSLIDE
+
+<img src="http://s.quickmeme.com/img/b4/b4d1fc95e2b46d08efe0467cfece8f17ad8e37866267ea0241ab94d74e8c2333.jpg">
+
+#HSLIDE
+
+<img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQdjAnom93_t4oFG6jUspdD5AVBom1hyCBk_l3ILur81n83NWuT">
